@@ -1,10 +1,11 @@
 import { TodoItem } from "./todoItem.js";
-import { TodoCollection } from "./todoCollection.js";
+//import { TodoCollection } from "./todoCollection.js";
 //import inquirer from "inquirer";
 
 import { select } from '@inquirer/prompts';
 import { input } from '@inquirer/prompts';
-import { checkbox, Separator } from '@inquirer/prompts';
+import { checkbox } from '@inquirer/prompts';
+import { JsonTodoCollection } from "./todoCollectionJson.js";
 
 let todos = [
     new TodoItem(1, "Buy Flowers"),
@@ -12,7 +13,7 @@ let todos = [
     new TodoItem(3, "Collect Tickets"),
     new TodoItem(4, "Call Anja", true)];
 
-let collection = new TodoCollection("Thorsten", todos);
+let collection = new JsonTodoCollection("Thorsten", todos);
 let showCompleted = true;
 
 const displayTodoList = () => { 
